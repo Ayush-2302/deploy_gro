@@ -1,0 +1,96 @@
+import {
+  Activity,
+  AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  BarChart3,
+  Bell,
+  Calendar,
+  Check,
+  CheckCircle,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Clock,
+  Copy,
+  Download,
+  Edit,
+  Eraser,
+  FileText,
+  Filter,
+  Globe,
+  Heart,
+  Home,
+  Lock,
+  Mic,
+  MicOff,
+  MoreHorizontal,
+  Plus,
+  Printer,
+  Search,
+  Settings,
+  Square,
+  Star,
+  Trash2,
+  Upload,
+  User,
+  Users,
+  X,
+  Zap,
+} from 'lucide-react';
+
+// Export all icons with consistent sizing
+export const Icons = {
+  Activity,
+  AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  BarChart3,
+  Bell,
+  Calendar,
+  Check,
+  CheckCircle,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Clock,
+  Copy,
+  Download,
+  Edit,
+  Eraser,
+  FileText,
+  Filter,
+  Globe,
+  Heart,
+  Home,
+  Lock,
+  Mic,
+  MicOff,
+  MoreHorizontal,
+  Plus,
+  Printer,
+  Search,
+  Settings,
+  Square,
+  Star,
+  Trash2,
+  Upload,
+  User,
+  Users,
+  X,
+  Zap,
+};
+
+// Icon wrapper component with consistent sizing
+interface IconProps {
+  name: keyof typeof Icons;
+  size?: number;
+  className?: string;
+}
+
+export function Icon({ name, size = 20, className }: IconProps) {
+  const IconComponent = Icons[name];
+  return <IconComponent size={size} className={className} />;
+}
