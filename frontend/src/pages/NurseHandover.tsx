@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import { postJSON, getJSON } from "../lib/api";
+import { postJSON, getJSON } from "../lib/api.js";
 import { PageHeader } from '../components/PageHeader';
 import { Button, Textarea, Input, Card } from '../components/Primitives';
 import { Icon } from '../components/Icons';
@@ -528,7 +528,7 @@ export default function NurseHandover() {
 
   const generateHandoverPDF = async () => {
     try {
-      const nabhService = new NABHPDFService();
+      const nabhService = NABHPDFService;
       
       // Convert form data to NABH format
       const nabhData = nabhService.convertHandoverData({
@@ -548,8 +548,8 @@ export default function NurseHandover() {
       
       // Download the PDF
       const fileName = `NABH_Handover_${patientId || 'unknown'}_${new Date().toISOString().split('T')[0]}.pdf`;
-      const pdfService = nabhService['pdfService'];
-      pdfService.downloadPDF(pdfBytes, fileName);
+      // Download the PDF
+      nabhService.downloadPDF(pdfBytes, fileName);
       
       toast.success('NABH Handover PDF generated successfully');
     } catch (error) {

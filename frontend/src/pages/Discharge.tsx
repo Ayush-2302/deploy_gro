@@ -138,7 +138,7 @@ export default function Discharge() {
 
   const generatePDF = async () => {
     try {
-      const nabhService = new NABHPDFService();
+      const nabhService = NABHPDFService;
       
       // Convert form data to NABH format
       const nabhData = nabhService.convertDischargeData(formData);
@@ -148,8 +148,8 @@ export default function Discharge() {
       
       // Download the PDF
       const fileName = `NABH_DischargeSummary_${formData.patientName.replace(/\s+/g, '_')}_${formData.dischargeDate.replace(/\//g, '-')}.pdf`;
-      const pdfService = nabhService['pdfService'];
-      pdfService.downloadPDF(pdfBytes, fileName);
+      // Download the PDF
+      nabhService.downloadPDF(pdfBytes, fileName);
       
       toast.success('NABH Discharge Summary PDF generated successfully');
     } catch (error) {
