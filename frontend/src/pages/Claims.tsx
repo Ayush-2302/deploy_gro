@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import { getJSON, postJSON } from "../lib/api";
+import { getJSON, postJSON } from "../lib/api.js";
 import { PageHeader } from '../components/PageHeader';
 import { Card, Button, Badge } from '../components/Primitives';
 import { DataTable } from '../components/DataTable';

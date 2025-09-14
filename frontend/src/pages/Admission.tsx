@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getJSON, postJSON, putJSON, deleteJSON } from "../lib/api";
+import { getJSON, postJSON, putJSON, deleteJSON } from "../lib/api.js";
 import { Recorder } from "../components/Recorder";
 import { Button, Input, Textarea, Select } from "../components/Primitives";
 import { PageHeader } from '../components/PageHeader';
 import { Card } from '../components/Primitives';
 import { Icon } from '../components/Icons';
-import { postProcessAdmission } from '../lib/postProcessAdmission';
+import { postProcessAdmission } from '../lib/postProcessAdmission.js';
 import { PatientJourneyTimeline } from '../components/PatientJourneyTimeline';
 
 type AdmissionForm = {

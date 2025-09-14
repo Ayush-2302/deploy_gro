@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from './Primitives';
 import { Icon } from './Icons';
-import TATService, { type TATSummary, type TATRecord } from '../lib/tatService';
+import TATService, { type TATSummary, type TATRecord } from '../lib/tatService.js';
 
 interface TATDashboardProps {
   patientId?: string;
